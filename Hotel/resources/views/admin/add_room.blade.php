@@ -79,9 +79,14 @@ x
             </div>
 
 
+            <div style="padding:10px">
+                <label for="">Persons</label>
+                <input type="number" name="persons" required="">
+            </div>
+
 
             <div style="padding:10px">
-                <label for="">Price</label>
+                <label for="">Price / night</label>
                 <input type="number" name="pricenumber" placeholder="in Euro" required="">
             </div>
 

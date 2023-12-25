@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("description")->nullable();
             $table->string("classRoom")->nullable();
             $table->string("price")->nullable();
+            $table->string("persons")->nullable();
             $table->timestamps();
         });
     }

@@ -28,6 +28,7 @@ $room->image=$imagename;
 
 
 $room->roomNumber=$request->number;
+$room->persons=$request->persons;
 $room->description=$request->description;
 $room->classRoom=$request->classRoom;
 $room->price=$request->pricenumber;

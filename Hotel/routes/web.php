@@ -31,3 +31,6 @@ Route::middleware([
 
 Route::get('/add_room_view', [AdminController::class, 'addview']);
 
+
+Route::post('/upload_room', [AdminController::class, 'upload']);
+

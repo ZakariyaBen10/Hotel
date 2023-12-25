@@ -34,28 +34,42 @@
 @include('admin.header')
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid"">
+                <div class="container-fluid">
 
-<form action="">
+@if(session()->has('message'))
+
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">
+x
+</button>
+
+{{session()->get('message')}}
+</div>
+
+@endif
+
+<form action="{{url('upload_room')}}" method="POST" enctype="multipart/form-data">
+
+@csrf
 
             <div style="padding:10px">
                 <label for="">Room number</label>
-                <input type="number" name="number" placeholder="ex. 123">
+                <input type="number" name="number" placeholder="ex. 123" required="">
             </div>
 
             <div style="padding:10px">
                 <label for="">Room image</label>
-                <input type="file" name="file">
+                <input type="file" name="file" required="">
             </div>
 
             <div style="padding:10px">
                 <label for="">Description</label>
-                <textarea name="description" id="description" cols="50" ></textarea>            
+                <textarea name="description" id="description" cols="50" required="" ></textarea>            
             </div>
 
             <div style="padding:10px">
                 <label for="">Class Room</label>
-                <select>
+                <select name="classRoom" required="">
 
                 <option value="Simple">Simple</option>
                 <option value="Modern">Modern</option>
@@ -65,18 +79,14 @@
             </div>
 
 
-            <div style="padding:10px">
-                <label for="">Room number</label>
-                <input type="text" name="date">
-            </div>
 
             <div style="padding:10px">
                 <label for="">Price</label>
-                <input type="number" name="number" placeholder="in Euro">
+                <input type="number" name="pricenumber" placeholder="in Euro" required="">
             </div>
 
              <div style="padding:10px">
-            <input type="submit" style="color:black;" class="btn btn-primary">           
+            <input type="submit" style="color:black;" class="btn btn-primary" required="">           
             </div>
 
 

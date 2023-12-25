@@ -34,13 +34,15 @@ class HomeController extends Controller
     public function index()
     {
 
-    if(Auth::id())
-{
-return redirect('home');
-}
+        if(Auth::id())
+        {
+        return redirect('home');
+        }
+        else
+        {
+            $room = room::all();
+            return view('user.home', compact('room'));
+        }
 
-        $room = room::all();
-        return view('user.home', compact('room'));
     }
-
 }

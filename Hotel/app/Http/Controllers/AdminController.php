@@ -6,13 +6,29 @@ use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Reservation;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
 
     public function addview()
     {
-    return view('admin.add_room');
+
+        if(Auth::id())
+        {
+            if(Auth::user()->typeUser=='1')
+            {
+                return view('admin.add_room');
+            } else
+            {
+            return redirect()->back();
+            }
+        }
+        else
+        {
+        return redirect('login');
+        }
     }
 
 
@@ -44,8 +60,22 @@ class AdminController extends Controller
     public function booking()
     {
         $data=reservation::all();
-        
-        return view('admin.booking', compact('data'));
+
+        if(Auth::id())
+                {
+                    if(Auth::user()->typeUser=='1')
+                    {
+                        return view('admin.booking', compact('data'));
+                    } else
+                    {
+                    return redirect()->back();
+                    }
+                }
+                else
+                {
+                return redirect('login');
+                }
+
     }
 
 
@@ -77,7 +107,24 @@ class AdminController extends Controller
     public function rooms()
     {
         $data=room::all();
-        return view('admin.rooms', compact('data'));
+
+        if(Auth::id())
+                {
+                    if(Auth::user()->typeUser=='1')
+                    {
+                        return view('admin.rooms', compact('data'));
+                    } else
+                    {
+                    return redirect()->back();
+                    }
+                }
+                else
+                {
+                return redirect('login');
+                }
+
+
+
     }
 
     public function delete_room($id)
@@ -95,7 +142,23 @@ class AdminController extends Controller
     {
 
         $data=room::find($id);
-        return view('admin.edit_room',compact('data'));
+
+
+        if(Auth::id())
+                {
+                    if(Auth::user()->typeUser=='1')
+                    {
+                        return view('admin.edit_room',compact('data'));
+                    } else
+                    {
+                    return redirect()->back();
+                    }
+                }
+                else
+                {
+                return redirect('login');
+                }
+
     }
 
     public function changing_room(Request $request,$id)
@@ -126,7 +189,23 @@ class AdminController extends Controller
 public function users_rights()
 {
         $data=user::all();
-        return view('admin.user_managment', compact('data'));
+
+
+        if(Auth::id())
+                {
+                    if(Auth::user()->typeUser=='1')
+                    {
+                        return view('admin.user_managment', compact('data'));
+                    } else
+                    {
+                    return redirect()->back();
+                    }
+                }
+                else
+                {
+                return redirect('login');
+                }
+
 
 }
 

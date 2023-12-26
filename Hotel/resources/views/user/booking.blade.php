@@ -95,7 +95,7 @@
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #007BFF !important;
             color: #fff;
             padding: 12px 20px;
             font-size: 16px;

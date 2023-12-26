@@ -9,7 +9,7 @@
 
                 @foreach($room as $rooms)
                     <div class="rooms col col-2">
-                        <img height="200px" width="400px" src="roomimage/{{$rooms->image}}"
+                        <img style="height:300px !important" width="400px" src="roomimage/{{$rooms->image}}"
                             alt="" class="rooms-img">
                         <h3 class="room-title">Room nr{{$rooms->roomNumber}}</h3>
                         <p class="room-text">{{$rooms->description}}</p>

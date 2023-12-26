@@ -24,7 +24,7 @@ class HomeController extends Controller
             } 
             else
             {
-                return view('admin.home');
+                return view('admin.add_room');
             }
         }
         else
@@ -67,13 +67,18 @@ class HomeController extends Controller
 
 
 
-public function cancel_book($id)
+    public function cancel_book($id)
+    {
+    $data=reservation::find($id);
+
+    $data->delete();
+
+    return redirect()->back()->with('message', 'The booking has been canceled !');
+    }
+
+
+public function contact()
 {
-$data=reservation::find($id);
-
-$data->delete();
-
-return redirect()->back()->with('message', 'The booking has been canceled !');
+                return view('user.contact');
 }
-
 }

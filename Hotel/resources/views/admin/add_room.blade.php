@@ -48,6 +48,8 @@ x
 
 @endif
 
+<h1>Add Rooms:</h1>
+
 <form action="{{url('upload_room')}}" method="POST" enctype="multipart/form-data">
 
 @csrf

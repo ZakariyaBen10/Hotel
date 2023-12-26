@@ -75,3 +75,10 @@ Route::post('/reservation', [BookController::class, 'reservation']);
 Route::get('/myreservation', [HomeController::class, 'myreservation']);
 
 Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);
+
+
+/*Contact form */
+Route::get('/contact', [HomeController::class, 'contact']);
+
+Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);
+

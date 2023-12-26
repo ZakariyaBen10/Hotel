@@ -14,7 +14,7 @@
 							<a class="header-nav-link header-active" href="{{url('home')}}">Home</a>
 						</li>
 						<li class="header-nav-list"><a class="header-nav-link" href="">About us</a></li>
-						<li class="header-nav-list"><a class="header-nav-link" href="">Contact Us</a></li>
+						<li class="header-nav-list"><a class="header-nav-link" href="{{url('contact')}}">Contact Us</a></li>
 
 
                     @if(Route::has('login'))

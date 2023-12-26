@@ -35,6 +35,14 @@
                     <span>Room Management</span></a>
             </li>
 
+                <!-- Nav Item - admin rights -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('users_rights')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>User rights</span></a>
+            </li>
+
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

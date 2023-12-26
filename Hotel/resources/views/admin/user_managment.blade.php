@@ -60,7 +60,7 @@ x
                     <th>Birthday</th>
                     <th>About</th>
                     <th>Email</th>
-                    <th>Admin</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,7 +72,13 @@ x
                     <td>{{$users->birthday}}</td>
                     <td>{{$users->about}}</td>
                     <td>{{$users->email}}</td>
-                    <td>{{$users->typeUser}}</td>
+                    <td>
+                        @if($users->typeUser == 1)
+                            Admin
+                        @else
+                            User
+                        @endif
+                    </td>                    
                     <td>
                         <a href="{{url('promote_user',$users->id)}}">
                         <button class="btn btn-success">Promote</button>

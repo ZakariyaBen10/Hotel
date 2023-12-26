@@ -38,3 +38,7 @@ Route::post('/upload_room', [AdminController::class, 'upload']);
 Route::get('/detail/{id}', [BookController::class, 'showDetail']);
 
 Route::post('/reservation', [BookController::class, 'reservation']);
+
+Route::get('/myreservation', [HomeController::class, 'myreservation']);
+
+Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);

@@ -1,15 +1,17 @@
    <header>
+
       <div class="header-container">
          <nav class="header-nav-bar">
 				<div class="header-nav-logo">
-					<a href="">
-						<img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
-							alt="star hotels logo">
+					<a href="{{url('home')}}">
+						<img src="../Hotel_logo_black.png" width="100px"
+							alt="Z hotels logo">
+
 					</a>
 				</div>
 				<ul class="header-nav-lists">
 						<li class="header-nav-list">
-							<a class="header-nav-link header-active" href="">Home</a>
+							<a class="header-nav-link header-active" href="{{url('home')}}">Home</a>
 						</li>
 						<li class="header-nav-list"><a class="header-nav-link" href="">About us</a></li>
 						<li class="header-nav-list"><a class="header-nav-link" href="">Contact Us</a></li>

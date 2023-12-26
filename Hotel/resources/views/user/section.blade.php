@@ -25,8 +25,8 @@
                         </div>
                         <p class="amount-text">{{$rooms->price}}€ Per Night</p>
                         <div class="buttons-container">
-                            <a href="#" class="btn btn-ghost">View More</a>
-                            <a href="" class="btn btn-fill">Book Now</a>
+                            <a href="" class="btn btn-ghost">View More</a>
+                            <a href="{{url('user.detail', $rooms->id)}}" class="btn btn-fill">Book Now</a>
                         </div>
                     </div>
                 @endforeach

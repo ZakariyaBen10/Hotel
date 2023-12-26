@@ -2,19 +2,19 @@
       <div class="header-container">
          <nav class="header-nav-bar">
 				<div class="header-nav-logo">
-					<a href="index.html">
+					<a href="">
 						<img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
 							alt="star hotels logo">
 					</a>
 				</div>
 				<ul class="header-nav-lists">
 						<li class="header-nav-list">
-							<a class="header-nav-link header-active" href="index.html">Home</a>
+							<a class="header-nav-link header-active" href="">Home</a>
 						</li>
 						<li class="header-nav-list"><a class="header-nav-link"
-								href="rooms-and-suites.html">Rooms and Suites</a></li>
-						<li class="header-nav-list"><a class="header-nav-link" href="facilities.html">Facilities</a></li>
-						<li class="header-nav-list"><a class="header-nav-link" href="contact-page.html">Contact Us</a></li>
+								href="">Rooms and Suites</a></li>
+						<li class="header-nav-list"><a class="header-nav-link" href="">About us</a></li>
+						<li class="header-nav-list"><a class="header-nav-link" href="">Contact Us</a></li>
 
 
                     @if(Route::has('login'))

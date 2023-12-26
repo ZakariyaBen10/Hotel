@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,4 @@ Route::get('/add_room_view', [AdminController::class, 'addview']);
 
 Route::post('/upload_room', [AdminController::class, 'upload']);
 
+Route::get('/detail/{id}', [BookController::class, 'showDetail']);

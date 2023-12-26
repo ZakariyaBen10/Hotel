@@ -14,18 +14,25 @@
 
            
 
-            <!-- Nav Item - Charts -->
+            <!-- Nav Item - add rooms -->
             <li class="nav-item">
                 <a class="nav-link" href="{{url('add_room_view')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Rooms Managments</span></a>
+                    <i class="fas fa-fw fa-bed"></i>
+                    <span>Add Rooms</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - booking -->
             <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="{{url('booking')}}">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Booking</span></a>
+            </li>
+
+                <!-- Nav Item - manage rooms -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('rooms')}}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Room Management</span></a>
             </li>
 
             <!-- Divider -->

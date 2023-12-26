@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Models\Reservation;
 
 class AdminController extends Controller
 {
@@ -14,28 +15,110 @@ class AdminController extends Controller
     }
 
 
-public function upload(Request $request)
+    public function upload(Request $request)
+    {
+    $room = new room;
+
+    $image = $request->file;
+
+    $imagename=time().'.'.$image->getClientoriginalExtension();
+
+    $request->file->move('roomimage', $imagename);
+
+    $room->image=$imagename;
+
+
+    $room->roomNumber=$request->number;
+    $room->persons=$request->persons;
+    $room->description=$request->description;
+    $room->classRoom=$request->classRoom;
+    $room->price=$request->pricenumber;
+
+    $room->save();
+
+    return redirect()->back()->with('message', 'Room was added successfuly');
+    }
+
+
+    public function booking()
+    {
+        $data=reservation::all();
+        
+        return view('admin.booking', compact('data'));
+    }
+
+
+    public function approved_booking($id)
+    {
+        $data=reservation::find($id);
+        
+        $data->status='Approved';
+
+        $data->save();
+
+    return redirect()->back()->with('message', "The booking on room nr $data->roomNumber by $data->name has been approved");
+
+    }
+
+
+    public function denied_booking($id)
+    {
+        $data=reservation::find($id);
+        
+        $data->status='Denied';
+
+        $data->save();
+
+    return redirect()->back()->with('message', "The booking on room nr $data->roomNumber by $data->name has been Denied");
+
+    }
+
+public function rooms()
 {
-$room = new room;
+    $data=room::all();
+    return view('admin.rooms', compact('data'));
+}
 
-$image = $request->file;
+public function delete_room($id)
+{
+    $data=room::find($id);
 
-$imagename=time().'.'.$image->getClientoriginalExtension();
-
-$request->file->move('roomimage', $imagename);
-
-$room->image=$imagename;
+        $data->delete();
 
 
-$room->roomNumber=$request->number;
-$room->persons=$request->persons;
-$room->description=$request->description;
-$room->classRoom=$request->classRoom;
-$room->price=$request->pricenumber;
+    return redirect()->back()->with('message', "The room number $data->roomNumber has been deleted");
+}
 
-$room->save();
 
-return redirect()->back()->with('message', 'Room was added successfuly');
+public function editroom($id)
+{
+
+    $data=room::find($id);
+    return view('admin.edit_room',compact('data'));
+}
+
+public function changing_room(Request $request,$id)
+{
+
+    $room=room::find($id);
+
+if ($request->hasFile('file')) {
+    $image = $request->file('file');
+    $imagename = time() . '.' . $image->getClientOriginalExtension();
+    $image->move('roomimage', $imagename);
+    $room->image = $imagename;
+}
+  
+    $room->roomNumber=$request->number;
+    $room->persons=$request->persons;
+    $room->description=$request->description;
+    $room->classRoom=$request->classRoom;
+    $room->price=$request->pricenumber;
+
+    $room->save();
+
+    return redirect()->back()->with('message', "The room number $room->roomNumber has been Updated");
+
 }
 
 

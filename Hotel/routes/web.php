@@ -35,6 +35,24 @@ Route::get('/add_room_view', [AdminController::class, 'addview']);
 
 Route::post('/upload_room', [AdminController::class, 'upload']);
 
+Route::get('/booking', [AdminController::class, 'booking']);
+
+Route::get('/approved_booking/{id}', [AdminController::class, 'approved_booking']);
+
+Route::get('/denied_booking/{id}', [AdminController::class, 'denied_booking']);
+
+Route::get('/rooms', [AdminController::class, 'rooms']);
+
+Route::get('/editroom/{id}', [AdminController::class, 'editroom']);
+
+Route::get('/delete_room/{id}', [AdminController::class, 'delete_room']);
+
+Route::post('/changing_room/{id}', [AdminController::class, 'changing_room']);
+
+
+
+
+
 Route::get('/detail/{id}', [BookController::class, 'showDetail']);
 
 Route::post('/reservation', [BookController::class, 'reservation']);

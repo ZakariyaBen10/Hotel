@@ -11,8 +11,6 @@
 						<li class="header-nav-list">
 							<a class="header-nav-link header-active" href="">Home</a>
 						</li>
-						<li class="header-nav-list"><a class="header-nav-link"
-								href="">Rooms and Suites</a></li>
 						<li class="header-nav-list"><a class="header-nav-link" href="">About us</a></li>
 						<li class="header-nav-list"><a class="header-nav-link" href="">Contact Us</a></li>
 
@@ -20,6 +18,10 @@
                     @if(Route::has('login'))
 
                     @auth
+
+						<li class="header-nav-list"><a class="header-btn header-btn-custom"
+								href="{{url('myreservation')}}">My reservations</a></li>
+
                     <x-app-layout>
                     </x-app-layout>
 

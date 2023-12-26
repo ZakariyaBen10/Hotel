@@ -110,6 +110,18 @@
     </style>
 </head>
 <body>
+@if(session()->has('message'))
+
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">
+x
+</button>
+
+{{session()->get('message')}}
+</div>
+
+@endif
+
     <div class="room-detail-container">
         <img  src="/roomimage/{{$room->image}}" alt="" class="room-img">
         <h3 class="room-title">Room number: {{$room->roomNumber}}</h3>
@@ -127,10 +139,17 @@
         <p class="amount-text">{{$room->price}}€ Per Night</p>
 
         <!-- Booking Form -->
-        <form action="" method="">
+        <form action="{{url('reservation')}}" method="POST">
             @csrf 
 
             <h3>Book Now</h3>
+
+
+
+            <div class="form-group">
+              <label for="room_number">Room number:</label>
+              <input type="text" id="room_number" name="room_number" value="{{ $room->roomNumber }}" readonly>
+            </div>
 
             <div class="form-group">
                 <label for="name">Name:</label>

@@ -36,3 +36,5 @@ Route::get('/add_room_view', [AdminController::class, 'addview']);
 Route::post('/upload_room', [AdminController::class, 'upload']);
 
 Route::get('/detail/{id}', [BookController::class, 'showDetail']);
+
+Route::post('/reservation', [BookController::class, 'reservation']);

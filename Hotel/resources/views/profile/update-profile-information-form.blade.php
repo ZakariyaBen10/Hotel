@@ -59,9 +59,16 @@
             <x-input-error for="name" class="mt-2" />
         </div>
 
+        <!-- Birthday -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="birthday" value="{{ __('Birthday') }}" />
+            <x-input id="name" type="date" class="mt-1 block w-full" wire:model="state.birthday" required autocomplete="birthday" />
+            <x-input-error for="birthday" class="mt-2" />
+        </div>
+
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="email" value="{{ __('Email') }}" />
+            <x-label for="birthday" value="{{ __('Email') }}" />
             <x-input id="email" type="email" class="mt-1 block w-full" wire:model="state.email" required autocomplete="username" />
             <x-input-error for="email" class="mt-2" />
 

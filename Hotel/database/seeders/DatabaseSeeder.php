@@ -4,8 +4,18 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\User;
+use App\Models\FAQItemController;
+use App\Models\FAQCategoryController;
+use App\Models\Contact;
+use App\Models\Room;
+use App\Models\Reservation;
 
 class DatabaseSeeder extends Seeder
+
 {
     /**
      * Seed the application's database.
@@ -18,5 +28,86 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-    }
+
+
+// Admin Users
+    User::create([
+        'name' => 'admin',
+        'email' => 'admin@ehb.be',
+        'password' => Hash::make('Password!321'),
+        'typeUser' => '1',
+        'aboutMe' => 'i am the first user ever',
+        'created_at' => now(),
+        'updated_at' => now()
+    ]);      
+
+
+//FAQ categorie
+ DB::table('faq_categories')->insert([
+            ['title' => 'General Questions', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Account Issues', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Payment and Billing', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+ 
+
+
+//FAQ items
+DB::table('faq_items')->insert([
+            [
+                'faq_categories_id' => 1,
+                'question' => 'How do I create an account?',
+                'answer' => 'To create an account, click on the "Sign Up" link and fill out the registration form.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'faq_categories_id' => 1,
+                'question' => 'How can I reset my password?',
+                'answer' => 'You can reset your password by clicking on the "Forgot Password" link on the login page.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'faq_categories_id' => 2,
+                'question' => 'I forgot my username. What should I do?',
+                'answer' => 'If you forgot your username, please contact our support team for assistance.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'faq_categories_id' => 3,
+                'question' => 'How can I update my billing information?',
+                'answer' => 'To update your billing information, log in to your account and go to the "Billing" section.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+
+
+//Contact forms
+DB::table('contacts')->insert([
+            ['name' => 'Robert vanden plop', 'email' => 'robert@gmail.com' ,'message' => 'Hello, I would like to make a video in you\'re hotel','created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Tyrana Lofembeek', 'email' => 'tyrana@gmail.com' ,'message' => 'Are they any vegan food in the hotel ?','created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Karen', 'email' => 'karen@gmail.com' ,'message' => 'I would like to speak to you\'re manager','created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Ronaldo', 'email' => 'roro@gmail.com' ,'message' => 'This is Ronaldo, i want free room','created_at' => now(), 'updated_at' => now()],
+        ]);
+
+
+
+// Rooms
+DB::table('rooms')->insert([
+            ['roomNumber' => '212', 'image' => 'Room212.webp' ,'description' => 'This is a tradition room that is more than good', 'classRoom' => 'Simple', 'price' => '140','persons' => '5', 'created_at' => now(), 'updated_at' => now()],
+            ['roomNumber' => '210', 'image' => 'Room210.jpeg' ,'description' => 'This extra comfort room has a good view', 'classRoom' => 'Modern', 'price' => '220','persons' => '3', 'created_at' => now(), 'updated_at' => now()],
+            ['roomNumber' => '134', 'image' => 'Room134.jpeg' ,'description' => 'The Chamber of the king is the must luxury than you will ever see', 'classRoom' => 'Luxe', 'price' => '320','persons' => '2', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+
+
+// Reservations
+DB::table('reservations')->insert([
+            ['roomNumber' => '212', 'name' => 'Carol' ,'phone' => '+32486756546', 'email' => 'Carol@gmail.com', 'checkin' => '21/12/2022','checkout' => '30/12/2022', 'status' => 'In progress', 'created_at' => now(), 'updated_at' => now()],
+            ['roomNumber' => '210', 'name' => 'Bob' ,'phone' => '+32486756987', 'email' => 'Bobl@gmail.com', 'checkin' => '04/05/2023','checkout' => '29/12/2022', 'status' => 'Approved', 'created_at' => now(), 'updated_at' => now()],
+            ['roomNumber' => '134', 'name' => 'Molly' ,'phone' => '+3248675477', 'email' => 'Molly@gmail.com', 'checkin' => '12/12/2022','checkout' => '27/12/2022', 'status' => 'Denied', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+
+}
 }

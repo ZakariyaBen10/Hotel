@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\FAQCategoryController;
+use App\Http\Controllers\FAQItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,4 +90,8 @@ Route::get('/contact_forms', [AdminController::class, 'contact_forms']);
 Route::get('/delte_froms/{id}', [AdminController::class, 'delte_froms']);
 
 
-
+/*FAQ*/
+// Route for displaying FAQ items
+Route::get('/faq', [FAQItemController::class, 'display'])->name('faq.display');
+// Route for displaying FAQ categories (assuming you want a separate route for categories)
+Route::get('/faq/categories', [FAQCategoryController::class, 'index'])->name('faq.categories.index');

@@ -15,6 +15,7 @@
 						</li>
 						<li class="header-nav-list"><a class="header-nav-link" href="">About us</a></li>
 						<li class="header-nav-list"><a class="header-nav-link" href="{{url('contact')}}">Contact Us</a></li>
+						<li class="header-nav-list"><a class="header-nav-link" href="{{url('faq')}}">FAQ</a></li>
 
 
                     @if(Route::has('login'))

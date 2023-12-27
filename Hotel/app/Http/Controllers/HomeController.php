@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Room;
 use App\Models\Reservation;
+use App\Models\Contact;
 
 
 
@@ -81,4 +82,22 @@ public function contact()
 {
                 return view('user.contact');
 }
+
+
+public function add_contactform(Request $request)
+{
+    $contact = new contact;
+
+    $contact->name=$request->name;
+    $contact->email=$request->email;
+    $contact->message=$request->message;
+
+    $contact->save();
+
+    return redirect()->back()->with('message', 'You\'re message has been send !');
+
+
+
+}
+
 }

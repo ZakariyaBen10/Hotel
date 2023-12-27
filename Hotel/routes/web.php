@@ -79,6 +79,5 @@ Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);
 
 /*Contact form */
 Route::get('/contact', [HomeController::class, 'contact']);
-
-Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);
+Route::post('/add_contactform', [HomeController::class, 'add_contactform']);
 

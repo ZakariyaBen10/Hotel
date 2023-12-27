@@ -129,7 +129,7 @@ form {
 .btn {
 	font-size: 16px;
 	padding: 0.8rem 1.8rem;
-	background-color: #d4af37;
+	background-color: #d4af37 !important;
 	color: white;
 	border-radius: 5px;
 	border: none;

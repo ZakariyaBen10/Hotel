@@ -6,6 +6,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\FAQCategoryController;
 use App\Http\Controllers\FAQItemController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\RoomManagingController;
+use App\Http\Controllers\RoomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,62 +36,54 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+
 /*Add Rooms */
-Route::get('/add_room_view', [AdminController::class, 'addview']);
-
-Route::post('/upload_room', [AdminController::class, 'upload']);
-
-
-
-/*Booking Request */
-
-Route::get('/booking', [AdminController::class, 'booking']);
-
-Route::get('/approved_booking/{id}', [AdminController::class, 'approved_booking']);
-
-Route::get('/denied_booking/{id}', [AdminController::class, 'denied_booking']);
+Route::get('/add_room_view', [RoomController::class, 'addview']);
+Route::post('/upload_room', [RoomController::class, 'upload']);
 
 
 
-
-/*Room Updating */
-Route::get('/rooms', [AdminController::class, 'rooms']);
-
-Route::get('/editroom/{id}', [AdminController::class, 'editroom']);
-
-Route::get('/delete_room/{id}', [AdminController::class, 'delete_room']);
-
-Route::post('/changing_room/{id}', [AdminController::class, 'changing_room']);
+/*Room Updating (Admin panel) */
+Route::get('/rooms', [RoomManagingController::class, 'rooms']);
+Route::get('/editroom/{id}', [RoomManagingController::class, 'editroom']);
+Route::get('/delete_room/{id}', [RoomManagingController::class, 'delete_room']);
+Route::post('/changing_room/{id}', [RoomManagingController::class, 'changing_room']);
 
 
 
-/*Admin Rights */
+/*Admin Rights (Admin panel) */
 Route::get('/users_rights', [AdminController::class, 'users_rights']);
 Route::get('/promote_user/{id}', [AdminController::class, 'promote_user']);
 Route::get('/discard_user/{id}', [AdminController::class, 'discard_user']);
 
 
-
+/*Room reservation (User panel) */
 Route::get('/detail/{id}', [BookController::class, 'showDetail']);
-
 Route::post('/reservation', [BookController::class, 'reservation']);
 
 
-/*My reservation */
-Route::get('/myreservation', [HomeController::class, 'myreservation']);
-
-Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);
-
-
-/*Contact form */
-Route::get('/contact', [HomeController::class, 'contact']);
-Route::post('/add_contactform', [HomeController::class, 'add_contactform']);
+/*Booking Reques (Admin panel) */
+Route::get('/booking', [ReservationController::class, 'booking']);
+Route::get('/approved_booking/{id}', [ReservationController::class, 'approved_booking']);
+Route::get('/denied_booking/{id}', [ReservationController::class, 'denied_booking']);
 
 
 
-/*Contact managment */
-Route::get('/contact_forms', [AdminController::class, 'contact_forms']);
-Route::get('/delte_froms/{id}', [AdminController::class, 'delte_froms']);
+/*My reservation (User panel) */
+Route::get('/myreservation', [ReservationController::class, 'myreservation']);
+Route::get('/cancel_book/{id}', [ReservationController::class, 'cancel_book']);
+
+
+/*Contact form (User panel) */
+Route::get('/contact', [ContactController::class, 'contact']);
+Route::post('/add_contactform', [ContactController::class, 'add_contactform']);
+
+
+
+/*Contact managment (Admin panel)*/
+Route::get('/contact_forms', [ContactController::class, 'contact_forms']);
+Route::get('/delte_froms/{id}', [ContactController::class, 'delte_froms']);
 
 
 /*FAQ*/

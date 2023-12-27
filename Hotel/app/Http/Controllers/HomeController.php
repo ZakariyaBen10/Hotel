@@ -55,57 +55,6 @@ class HomeController extends Controller
 
     }
 
-    public function myreservation()
-    {
-
-
-        if(Auth::id())
-        {
-            $userid= Auth::user()->id;
-
-            $book = reservation::where('user_id', $userid)->get();
-            return view('user.my_reservation', compact('book'));
-        }
-        else
-        {
-            return redirect()->back();
-        }
-    }
-
-
-
-    public function cancel_book($id)
-    {
-    $data=reservation::find($id);
-
-    $data->delete();
-
-    return redirect()->back()->with('message', 'The booking has been canceled !');
-    }
-
-
-    public function contact()
-    {
-                    return view('user.contact');
-    }
-
-
-    public function add_contactform(Request $request)
-    {
-        $contact = new contact;
-
-        $contact->name=$request->name;
-        $contact->email=$request->email;
-        $contact->message=$request->message;
-
-        $contact->save();
-
-        return redirect()->back()->with('message', 'You\'re message has been send !');
-
-
-
-    }
-
 
     public function about()
     {

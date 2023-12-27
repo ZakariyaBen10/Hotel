@@ -95,3 +95,9 @@ Route::get('/delte_froms/{id}', [AdminController::class, 'delte_froms']);
 Route::get('/faq', [FAQItemController::class, 'display'])->name('faq.display');
 // Route for displaying FAQ categories (assuming you want a separate route for categories)
 Route::get('/faq/categories', [FAQCategoryController::class, 'index'])->name('faq.categories.index');
+
+
+
+/*About us */
+Route::get('/about', [HomeController::class, 'about']);
+

@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="../assets/img/favicon.webp" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="scroll-bar">
+<body style="display: flex !important;  flex-direction: column !important; min-height: 100vh !important;" class="scroll-bar">
     <div id="loader">
         <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">

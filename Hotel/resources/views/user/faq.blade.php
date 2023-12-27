@@ -22,7 +22,7 @@
 
 </style>
 </head>
-<body class="scroll-bar">
+<body style="display: flex !important;  flex-direction: column !important; min-height: 100vh !important;" class="scroll-bar">
     <div id="loader">
         <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
@@ -56,7 +56,7 @@ x
 
 <div class="container mt-5">
     <div class="container">
-  <h2>Frequently Asked Questions</h2>
+  <h2 style="padding-bottom: 30px">Frequently Asked Questions</h2>
   <div class="accordion" id="faqAccordion">
     @foreach($categories as $category)
       <div class="accordion-item">

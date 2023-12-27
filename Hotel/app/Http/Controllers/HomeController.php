@@ -17,20 +17,26 @@ class HomeController extends Controller
     {
         if(Auth::id()) 
         {
-            if(Auth::user()->typeUser=='0') 
+            if(Auth::user()->typeUser=='1') 
             {
-                $room = room::all();
+                return view('admin.add_room');
 
-                return view('user.home', compact('room'));
             } 
             else
             {
-                return view('admin.add_room');
+
+                $room = room::all();
+
+                return view('user.home', compact('room'));
+
             }
         }
         else
         {
-            return redirect()->back();
+                            $room = room::all();
+
+                return view('user.home', compact('room'));
+
         }
     }
 
@@ -78,26 +84,32 @@ class HomeController extends Controller
     }
 
 
-public function contact()
-{
-                return view('user.contact');
-}
+    public function contact()
+    {
+                    return view('user.contact');
+    }
 
 
-public function add_contactform(Request $request)
-{
-    $contact = new contact;
+    public function add_contactform(Request $request)
+    {
+        $contact = new contact;
 
-    $contact->name=$request->name;
-    $contact->email=$request->email;
-    $contact->message=$request->message;
+        $contact->name=$request->name;
+        $contact->email=$request->email;
+        $contact->message=$request->message;
 
-    $contact->save();
+        $contact->save();
 
-    return redirect()->back()->with('message', 'You\'re message has been send !');
+        return redirect()->back()->with('message', 'You\'re message has been send !');
 
 
 
+    }
+
+
+    public function about()
+    {
+        return view('user.about');
 }
 
 }

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Room Managment</title>
+    <title>Contact Forms</title>
 
     <!-- Custom fonts for this template-->
 @include('admin.css')
@@ -50,41 +50,31 @@ x
 
 
     <div class="container mt-5 mb-5">
-        <h1>Room management:</h1>
+        <h1>Contact Forms:</h1>
 
         <table class="table table-bordered mt-4">
             <thead>
                 <tr>
-                    <th>Room Number</th>
-                    <th>image</th>
-                    <th>descritption</th>
-                    <th>classRoom</th>
-                    <th>price</th>
-                    <th>persons</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Sended the</th>
                 </tr>
             </thead>
             <tbody>
 
-            @foreach($data as $rooms)
+            @foreach($data as $contacts)
                 <tr>
-                    <td>{{$rooms->roomNumber}}</td>
-                    <td><img height="200px" src="roomimage/{{$rooms->image}}" alt="Room {{$rooms->roomNumber}} image"></td>
-                    <td>{{$rooms->description}}</td>
-                    <td>{{$rooms->classRoom}}</td>
-                    <td>{{$rooms->price}}</td>
-                    <td>{{$rooms->persons}}</td>
+                    <td>{{$contacts->name}}</td>
+                    <td>{{$contacts->email}}</td>
+                    <td>{{$contacts->message}}</td>
+                    <td>{{$contacts->created_at}}</td>
+                      
                     <td>
-                        <a href="{{url('editroom',$rooms->id)}}">
-                        <button class="btn btn-success">Edit</button>
+                        <a href="{{url('delte_froms',$contacts->id)}}">
+                        <button class="btn btn-danger">delete</button>
                         </a>     
-                    </td>      
-
-                    <td>
-                        <a href="{{url('delete_room',$rooms->id)}}">
-                        <button class="btn btn-danger">Delete</button>
-                        </a>       
-
-                    </td>      
+                    </td>   
 
                  </tr>
                 @endforeach

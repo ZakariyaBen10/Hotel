@@ -7,6 +7,8 @@ use App\Models\Room;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Contact;
+
 
 
 class AdminController extends Controller
@@ -186,16 +188,68 @@ class AdminController extends Controller
     }
 
 
-public function users_rights()
+    public function users_rights()
+    {
+            $data=user::all();
+
+
+            if(Auth::id())
+                    {
+                        if(Auth::user()->typeUser=='1')
+                        {
+                            return view('admin.user_managment', compact('data'));
+                        } else
+                        {
+                        return redirect()->back();
+                        }
+                    }
+                    else
+                    {
+                    return redirect('login');
+                    }
+
+
+    }
+
+    public function promote_user(Request $request,$id)
+    {
+
+            $user=user::find($id);
+
+            $user->typeUser = 1;
+
+            $user->save();
+
+            return redirect()->back()->with('message', "The user $user->email has been promoted to admin !");
+    }
+
+
+    public function discard_user(Request $request,$id)
+    {
+
+            $user=user::find($id);
+
+            $user->typeUser = 0;
+
+            $user->save();
+
+            return redirect()->back()->with('message', "The user $user->email has been discarded to user !");
+    }
+
+
+
+
+public function contact_forms()
 {
-        $data=user::all();
+
+    $data=contact::all();
 
 
         if(Auth::id())
                 {
                     if(Auth::user()->typeUser=='1')
                     {
-                        return view('admin.user_managment', compact('data'));
+                        return view('admin.contact', compact('data'));
                     } else
                     {
                     return redirect()->back();
@@ -206,34 +260,19 @@ public function users_rights()
                 return redirect('login');
                 }
 
-
-}
-
-public function promote_user(Request $request,$id)
-{
-
-        $user=user::find($id);
-
-        $user->typeUser = 1;
-
-        $user->save();
-
-        return redirect()->back()->with('message', "The user $user->email has been promoted to admin !");
 }
 
 
-public function discard_user(Request $request,$id)
-{
 
-        $user=user::find($id);
+ public function delte_froms($id)
+    {
+        $data=contact::find($id);
 
-        $user->typeUser = 0;
+            $data->delete();
 
-        $user->save();
 
-        return redirect()->back()->with('message', "The user $user->email has been discarded to user !");
-}
-
+        return redirect()->back()->with('message', "The message from $data->email has been deleted");
+    }
 
 
 }

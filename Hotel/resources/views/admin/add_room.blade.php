@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Room Managment</title>
+    <title>Add Rooms</title>
 
     <!-- Custom fonts for this template-->
 @include('admin.css')

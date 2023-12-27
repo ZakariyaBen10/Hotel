@@ -81,3 +81,11 @@ Route::get('/cancel_book/{id}', [HomeController::class, 'cancel_book']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/add_contactform', [HomeController::class, 'add_contactform']);
 
+
+
+/*Contact managment */
+Route::get('/contact_forms', [AdminController::class, 'contact_forms']);
+Route::get('/delte_froms/{id}', [AdminController::class, 'delte_froms']);
+
+
+

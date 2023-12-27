@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>User Managment</title>
+    <title>User Rights</title>
 
     <!-- Custom fonts for this template-->
 @include('admin.css')
@@ -50,7 +50,7 @@ x
 
 
     <div class="container mt-5 mb-5">
-        <h1>User management</h1>
+        <h1>User Rights:</h1>
 
         <table class="table table-bordered mt-4">
             <thead>

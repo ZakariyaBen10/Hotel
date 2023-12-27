@@ -39,9 +39,24 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{url('users_rights')}}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>User rights</span></a>
+                    <span>User Rights</span></a>
             </li>
 
+
+            <!-- Nav Item - Contact forms -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('contact_forms')}}">
+                    <i class="fas fa-fw fa-phone"></i>
+                    <span>Contact Forms</span></a>
+            </li>
+
+
+ <!-- Nav Item - FAQ's -->
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-question"></i>
+                    <span>FAQ</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

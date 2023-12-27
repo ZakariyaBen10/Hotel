@@ -47,23 +47,9 @@
 			<h2 class="jumbotron-header">Discover the perfect balance <br> of hospitality, luxury and <br>comfort.</h2>
 			<p>We are focused on providing clients with the highest level<br>
 					of comfort and excellent affordable rates</p>
-					<a href="https://timbu.com/search?query=hotel" class="btn btn-fill btn-large">Book Now</a>
 		</div>
 		<div class="jumbotron-right">
-			<form action="" class="jumbotron-form">
-				<!-- Put the form here -->
-					<h3>Scared you can't afford it?</h3><br>
-					<p>Don't worry, our hotel offers the best<br> affordable rates you can ever find.</p>
-					<label class="hide" for="arrival">arrival date</label>
-					<input type="text" id="arrival" name="arrival_date" placeholder="Arrival Date" onfocus="(this.type='date')" ><br>
-					<label class="hide" for="departure">departure date</label>
-					<input type="text"  id="departure" name="departure_date" placeholder="Departure Date" onfocus="(this.type='date')" ><br>
-					<label class="hide" for="guests">how many guests</label>
-					<input type="text" id="guests" name="guests" placeholder="Guests"><br>
-					<label class="hide" for="children">children</label>
-					<input type="text" id="children" name="children" placeholder="Children"><br>
-					<button type="button" class="rates">CHECK RATES</button>
-			</form>
+		
 		</div>
 	</div>
 
@@ -76,7 +62,7 @@
 		<div class="footer-container">
 			<nav class="footer-nav">
 				<div class="footer-description">
-					<h3 class="footer-description-title">Star Hotels</h3>
+					<h3 class="footer-description-title">Z Hotels</h3>
 					<p>Hospitality and Comfort are our watchwords</p>
 				</div>
 				<div class="footer-contact-us">

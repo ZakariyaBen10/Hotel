@@ -55,7 +55,7 @@
 		<div class="footer-container">
 			<nav class="footer-nav">
 				<div class="footer-description">
-					<h3 class="footer-description-title">Star Hotels</h3>
+					<h3 class="footer-description-title">Z Hotels</h3>
 					<p>Hospitality and Comfort are our watchwords</p>
 				</div>
 				<div class="footer-contact-us">

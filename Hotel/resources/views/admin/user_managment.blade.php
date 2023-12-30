@@ -70,7 +70,7 @@ x
                     <td><img height="200px" src="avatarimage/{{$users->image}}" alt="Avatar of {{$users->name}}"></td>
                     <td>{{$users->name}}</td>
                     <td>{{$users->birthday}}</td>
-                    <td>{{$users->about}}</td>
+                    <td>{{$users->aboutMe}}</td>
                     <td>{{$users->email}}</td>
                     <td>
                         @if($users->typeUser == 1)

@@ -37,10 +37,24 @@ class DatabaseSeeder extends Seeder
         'password' => Hash::make('Password!321'),
         'typeUser' => '1',
         'aboutMe' => 'i am the first user ever',
+        'birthday' => '2023-12-14',
         'created_at' => now(),
         'updated_at' => now()
     ]);      
 
+
+
+// Normal Users
+    User::create([
+        'name' => 'ben',
+        'email' => 'ben@gmail.com',
+        'password' => Hash::make('azerty16'),
+        'typeUser' => '0',
+        'aboutMe' => 'i am the second user ever',
+        'birthday' => '2023-10-12',
+        'created_at' => now(),
+        'updated_at' => now()
+    ]);  
 
 //FAQ categorie
  DB::table('faq_categories')->insert([

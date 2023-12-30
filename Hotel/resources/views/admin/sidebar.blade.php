@@ -60,7 +60,7 @@
 
  <!-- Nav Item - FAQ's Items -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('faqItem_managment')}}">
                     <i class="fas fa-fw fa-question"></i>
                     <span>FAQ Items</span></a>
             </li>

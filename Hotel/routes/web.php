@@ -98,10 +98,20 @@ Route::get('/faq/categories', [FAQCategoryController::class, 'index'])->name('fa
 Route::get('/about', [HomeController::class, 'about']);
 
 
-/*FAQ (Admin panel) */
+/*FAQ Categories (Admin panel) */
 Route::get('/faq_managment', [FAQCategoryController::class, 'faq_managment']);
 Route::get('/add_cat', [FAQCategoryController::class, 'add_cat']);
 Route::post('/add_category', [FAQCategoryController::class, 'add_category']);
 Route::get('/editcategory/{id}', [FAQCategoryController::class, 'editcategory']);
 Route::get('/delete_category/{id}', [FAQCategoryController::class, 'delete_category']);
 Route::post('/changing_category/{id}', [FAQCategoryController::class, 'changing_category']);
+
+
+/*FAQ Items (Admin panel) */
+Route::get('/faqItem_managment', [FAQItemController::class, 'faqItem_managment']);
+Route::get('/add_it', [FAQItemController::class, 'add_it']);
+Route::post('/add_item', [FAQItemController::class, 'add_item']);
+Route::get('/edititem/{id}', [FAQItemController::class, 'edititem']);
+Route::get('/delete_item/{id}', [FAQItemController::class, 'delete_item']);
+Route::post('/changing_item/{id}', [FAQItemController::class, 'changing_item']);
+

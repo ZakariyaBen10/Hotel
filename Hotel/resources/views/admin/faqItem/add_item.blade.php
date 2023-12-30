@@ -9,9 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Room Managment</title>
+    <title>Add Items</title>
 
     <!-- Custom fonts for this template-->
+<base href="/public">
 @include('admin.css')
 </head>
 
@@ -36,14 +37,59 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">FAQ items</h1>
+@if(session()->has('message'))
+
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">
+x
+</button>
+
+{{session()->get('message')}}
+</div>
+
+@endif
+
+<h1>Add Items:</h1>
+
+<form action="{{url('add_item')}}" method="POST" enctype="multipart/form-data">
+
+@csrf
+
+            <div style="padding:10px">
+                <label for="">Category</label>
+                <select name="category_id" required="">
+
+                @foreach($categories as $category)
+              
+ <option value="{{ $category->id }}">{{ $category->title }}</option>
+            @endforeach
+
+                </select>
+            </div>
+
+
+            <div style="padding:10px">
+                <label for="">Question</label>
+                <input type="text" name="question" required="">
+            </div>
+
+            <div style="padding:10px">
+                <label for="">Answer</label>
+                <input type="text" name="answer" required="">
+            </div>
+
+
+
+             <div style="padding:10px">
+            <input type="submit" style="color:black;" class="btn btn-primary" required="">           
+            </div>
+
+
+</form>
 
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

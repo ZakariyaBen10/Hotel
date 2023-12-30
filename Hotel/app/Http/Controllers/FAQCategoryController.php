@@ -31,7 +31,7 @@ public function index()
                 {
                     if(Auth::user()->typeUser=='1')
                     {
-                        return view('admin.faq.faq_cat', compact('data'));
+                        return view('admin.faqCat.faq_cat', compact('data'));
                     } else
                     {
                     return redirect()->back();
@@ -53,7 +53,7 @@ if(Auth::id())
                 {
                     if(Auth::user()->typeUser=='1')
                     {
-                        return view('admin.faq.add_cat');
+                        return view('admin.faqCat.add_cat');
                     } else
                     {
                     return redirect()->back();
@@ -99,7 +99,7 @@ if(Auth::id())
                 {
                     if(Auth::user()->typeUser=='1')
                     {
-                        return view('admin.faq.edit_cat',compact('data'));
+                        return view('admin.faqCat.edit_cat',compact('data'));
                     } else
                     {
                     return redirect()->back();

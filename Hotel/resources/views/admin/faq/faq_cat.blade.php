@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Room Managment</title>
+    <title>FAQ Category</title>
 
     <!-- Custom fonts for this template-->
 @include('admin.css')
@@ -37,10 +37,44 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">FAQ Category</h1>
+
+                        <a href="{{url('add_cat')}}">
+                        <button class="btn btn-success">Add Category</button>
+                        </a>       
+
+
+ <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach($data as $datas)
+                <tr>
+                    <td>{{$datas->title}}</td>
+                    <td>
+                        <a href="{{url('editcategory',$datas->id)}}">
+                        <button class="btn btn-success">Edit</button>
+                        </a>       
+
+                    </td>      
+
+                    <td>
+                        <a href="{{url('delete_category',$datas->id)}}">
+                        <button class="btn btn-danger">Delete</button>
+                        </a> 
+                    </td>    
+
+                 </tr>
+                @endforeach
+
+            </tbody>
+        </table>
 
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->

@@ -75,7 +75,7 @@ Route::get('/myreservation', [ReservationController::class, 'myreservation']);
 Route::get('/cancel_book/{id}', [ReservationController::class, 'cancel_book']);
 
 
-/*Contact form (User panel) */
+/*Contact form  */
 Route::get('/contact', [ContactController::class, 'contact']);
 Route::post('/add_contactform', [ContactController::class, 'add_contactform']);
 
@@ -86,14 +86,22 @@ Route::get('/contact_forms', [ContactController::class, 'contact_forms']);
 Route::get('/delte_froms/{id}', [ContactController::class, 'delte_froms']);
 
 
-/*FAQ*/
+/*FAQ (User panel) */
 // Route for displaying FAQ items
 Route::get('/faq', [FAQItemController::class, 'display'])->name('faq.display');
-// Route for displaying FAQ categories (assuming you want a separate route for categories)
+// Route for displaying FAQ categories
 Route::get('/faq/categories', [FAQCategoryController::class, 'index'])->name('faq.categories.index');
 
 
 
-/*About us */
+/*About us (User panel) */
 Route::get('/about', [HomeController::class, 'about']);
 
+
+/*FAQ (Admin panel) */
+Route::get('/faq_managment', [FAQCategoryController::class, 'faq_managment']);
+Route::get('/add_cat', [FAQCategoryController::class, 'add_cat']);
+Route::post('/add_category', [FAQCategoryController::class, 'add_category']);
+Route::get('/editcategory/{id}', [FAQCategoryController::class, 'editcategory']);
+Route::get('/delete_category/{id}', [FAQCategoryController::class, 'delete_category']);
+Route::post('/changing_category/{id}', [FAQCategoryController::class, 'changing_category']);

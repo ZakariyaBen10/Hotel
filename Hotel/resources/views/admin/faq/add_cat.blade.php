@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Room Managment</title>
+    <title>Add Category</title>
 
     <!-- Custom fonts for this template-->
 @include('admin.css')
@@ -36,14 +36,40 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+@if(session()->has('message'))
+
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">
+x
+</button>
+
+{{session()->get('message')}}
+</div>
+
+@endif
+
+<h1>Add Category:</h1>
+
+<form action="{{url('add_category')}}" method="POST" enctype="multipart/form-data">
+
+@csrf
+
+            <div style="padding:10px">
+                <label for="">Title Category</label>
+                <input type="text" name="title" required="">
+            </div>
+
+
+             <div style="padding:10px">
+            <input type="submit" style="color:black;" class="btn btn-primary" required="">           
+            </div>
+
+
+</form>
 
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

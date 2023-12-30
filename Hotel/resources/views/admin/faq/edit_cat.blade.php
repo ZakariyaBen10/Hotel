@@ -9,9 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Room Managment</title>
+    <title>Add Category</title>
 
     <!-- Custom fonts for this template-->
+<base href="/public">
 @include('admin.css')
 </head>
 
@@ -36,8 +37,36 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+@if(session()->has('message'))
+
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert">
+x
+</button>
+
+{{session()->get('message')}}
+</div>
+
+@endif
+
+<h1>Edit Category:</h1>
+
+<form action="{{url('changing_category', $data->id)}}" method="POST" enctype="multipart/form-data">
+
+@csrf
+
+            <div style="padding:10px">
+                <label for="">Title Category</label>
+                <input type="text" name="title" required="" value="{{$data->title}}">
+            </div>
+
+
+             <div style="padding:10px">
+            <input type="submit" style="color:black;" class="btn btn-primary" required="">           
+            </div>
+
+
+</form>
 
                 </div>
                 <!-- /.container-fluid -->

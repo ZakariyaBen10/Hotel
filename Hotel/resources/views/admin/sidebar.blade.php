@@ -51,11 +51,18 @@
             </li>
 
 
- <!-- Nav Item - FAQ's -->
+ <!-- Nav Item - FAQ's Category -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('faq_managment')}}">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>FAQ Category</span></a>
+            </li>
+
+ <!-- Nav Item - FAQ's Items -->
             <li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="fas fa-fw fa-question"></i>
-                    <span>FAQ</span></a>
+                    <span>FAQ Items</span></a>
             </li>
 
             <!-- Divider -->

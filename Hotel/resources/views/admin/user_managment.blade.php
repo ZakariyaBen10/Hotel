@@ -67,7 +67,7 @@ x
 
             @foreach($data as $users)
                 <tr>
-                    <td><img height="200px" src="avatarimage/{{$users->image}}" alt="Avatar of {{$users->name}}"></td>
+                    <td><img height="200px" src="./storage/{{$users->image}}" alt="Avatar of {{$users->name}}"></td>
                     <td>{{$users->name}}</td>
                     <td>{{$users->birthday}}</td>
                     <td>{{$users->aboutMe}}</td>

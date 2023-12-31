@@ -16,7 +16,7 @@ class FAQItemController extends Controller
 /*User Panel */
  public function display()
     {
-        $categories = Faq_Items::with('faqItems')->get();
+$categories = Faq_categories::with('faqItems')->get();
 
         return view('user.faq', compact('categories'));
     }

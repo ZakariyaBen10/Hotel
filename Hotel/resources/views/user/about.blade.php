@@ -48,11 +48,10 @@ x
     <div class="container mt-5 mb-5">
       <h2 style="padding-bottom: 30px !important">List of sources:</h2>
         <ul class="list-group">
-            <li class="list-group-item">Source 1</li>
-            <li class="list-group-item">Source 2</li>
-            <li class="list-group-item">Source 3</li>
-            <li class="list-group-item">Source 4</li>
-            <li class="list-group-item">Source 5</li>
+            <li class="list-group-item">The templates that I used: <a href="https://themewagon.com/themes/free-html5-responsive-hotel-website-template-star-hotels/" target="_blank">user-template</a> , <a href="https://startbootstrap.com/theme/sb-admin-2" target="_blank">admin-template</a></li>
+            <li class="list-group-item">The sources that helped: <a href="https://www.youtube.com/WebTechKnowledge" target="_blank">Youtube</a>, <a href="https://chat.openai.com" target="_blank">Chatgpt</a></li>
+            <li class="list-group-item">The documentation that i used: <a href="https://laravel.com/docs/10.x/routing" target="_blank">laravel</a> , <a href="https://jetstream.laravel.com/introduction.html" target="_blank">jetstream</a></li>
+            <li class="list-group-item">The course that i followed :  <a href="https://canvas.ehb.be/courses/34801" target="_blank">Backend Web</a> </li>
         </ul>
     </div>
 
